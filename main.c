@@ -12,13 +12,13 @@ int main(void) {
     int num1 = 0;
     arr_pop(nums, num1);
 
-    printf("\nPop num is: %d\n\n", num1);
+    printf("----------------------\nPop num is: %d\n\n", num1);
 
-    arr_foreach(nums, const num, {
-        printf("Foreach num is: %d\n", num);
-    })
+    arr_foreach(nums, i) {
+        printf("Foreach num is: %d\n", nums[i]);
+    }
 
-    printf("\nArray len is: %zu\n", arr_len(nums));
+    printf("\nArray len is: %zu\n----------------------", arr_len(nums));
 
     arr_free(nums);
 
