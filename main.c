@@ -2,7 +2,7 @@
 
 
 int main(void) {
-    int* nums = nullptr;
+    int* nums = NULL;
 
     arr_push(nums, 1);
     arr_push(nums, 2);
