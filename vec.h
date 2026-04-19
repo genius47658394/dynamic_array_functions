@@ -11,6 +11,31 @@
  * USAGE: just write VECTOR_DEFINE(type)
  *      and type must be your type
  *      then u`ll get vector as in c++
+ *
+ * vec_init_empty() initialise vec empty
+ * vec_init_with_capacity(size_t capacity) initialise vec with some capacity
+ * vec_free(vec* vector) free the vec
+ *
+ * vec_reserve(vec* vector, size_t new_cap) reserve new memory for vec
+ * vec_shrink_to_fir(vec* vector) resize capacity to real size of vec
+ *
+ * vec_push(vec* vector, element) push to the end of the array your element, see example to understand
+ * vec_pop(vec* vector) remove element from the end of vec and return it
+ *
+ * vec_get_checked\unchecked(vec* vector, size_t index) i think understandable what is it functions do
+ *
+ * vec_set(vec* vector, size_t index, element) set the element on position of index without check capacity
+ * vec_insert(vec* vector, size_t index, element) do vec_set but check capacity and resize vec
+ *
+ * vec_erase(vec* vector, size_t index) remove the element on position of index
+ *
+ * vec_begin(vec* vector) pointer to the start of vec
+ * vec_end(vec* vector) pointer to the end of vec
+ *
+ * vec_print(vec* vector) prints the vec as array in python
+ *
+ * vec_sort(vec* vector, int cmp) wrapper on qsort
+ * vec_search(vec* vector, *key, int cmp) wrapper on bsearch
  */
 
 #define PRINT_FMT(T) _Generic( (T){0},  \
