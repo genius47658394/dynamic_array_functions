@@ -28,6 +28,7 @@
  * vec_insert(vec* vector, size_t index, element) do vec_set but check capacity and resize vec
  *
  * vec_erase(vec* vector, size_t index) remove the element on position of index
+ * vec_is_empty(vece* vector) check is the size is 0 or data is null and return bool
  *
  * vec_begin(vec* vector) pointer to the start of vec
  * vec_end(vec* vector) pointer to the end of vec
@@ -129,7 +130,7 @@
     T vec_##T##_get(vec_##T* vec, size_t idx) {                                                         \
         assert(idx < vec->size && "index out of range");                                                \
         return vec->data[idx];                                                                          \
-    }                                                                                                                                                                               \
+    }                                                                                                   \
                                                                                                         \
     void vec_##T##_set(vec_##T* vec, size_t idx, T val) {                                               \
         assert(idx < vec->size && "index out of range in set");                                         \
@@ -150,6 +151,10 @@
         assert(index < vec->size && "erase index out of range");                                        \
         memmove(vec->data + index, vec->data + index + 1, (vec->size - index - 1) * sizeof(T));         \
         vec->size--;                                                                                    \
+    }                                                                                                   \    
+                                                                                                        \    
+    int vec_##T##_is_empty(vec_##T* vec) {                                                              \
+        return vec->size == 0 || vec->data == NULL;                                                     \
     }                                                                                                   \
                                                                                                         \
     T* vec_##T##_begin(vec_##T* vec) { return vec->data; }                                              \
